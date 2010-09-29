@@ -1,7 +1,32 @@
 Install Notes:
 
-git clone git://github.com/thheller/dotvim
-ln -s dotvim ~/.vim
+Checkout Stuff:
+
+git clone git://github.com/thheller/dotvim ~/.vim
 cd ~/.vim
+mkdir tmp
 git submodule init
+git submodule update
+
+Symlink if not already done:
+
+~/.vim -> dotvim
+ln -s ~/.vimvimrc ~/.vimrc
+
+Make vim-taglist happy:
+
+brew install ctags
+
+Make command-t happy:
+
+cd bundle/command-t/ruby/command-t
+ruby extconf.rb
+make
+make install
+
+(might require rvm system)
+
+:Ack
+
+brew install ack
 
