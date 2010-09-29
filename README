@@ -10,8 +10,7 @@ git submodule update
 
 Symlink if not already done:
 
-~/.vim -> dotvim
-ln -s ~/.vimvimrc ~/.vimrc
+ln -s ~/.vim/vimrc ~/.vimrc
 
 Make vim-taglist happy:
 
