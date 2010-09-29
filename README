@@ -1,0 +1,7 @@
+Install Notes:
+
+git clone git://github.com/thheller/dotvim
+ln -s dotvim ~/.vim
+cd ~/.vim
+git submodule init
+
