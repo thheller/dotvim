@@ -1,4 +1,11 @@
-Install Notes:
+Beware before using this, I'm a VIM noob!
+
+Intended for MacVIM, console vim still is a little creepy.
+
+http://github.com/b4winckler/macvim
+-> enable experimental renderer!!!
+
+Install Notes (so I dont forget)
 
 Checkout Stuff:
 
@@ -11,6 +18,7 @@ git submodule update
 Symlink if not already done:
 
 ln -s ~/.vim/vimrc ~/.vimrc
+ln -s ~/.vim/gvimrc ~/.gvimrc
 
 Make vim-taglist happy:
 

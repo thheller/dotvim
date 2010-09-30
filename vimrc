@@ -82,20 +82,21 @@ if has("gui_running")
   
   set guifont=Monaco:h12
   colorscheme vividchalk
-  winpos 0 1580
-  winsize 200 90
+
+  " my 30" setup, doesnt work so well on macbook :P
+  " winpos 0 1580
+  " winsize 200 90
   set guioptions-=T
   set fuoptions=maxvert,maxhorz
-end
 
-" else
+else
   set guicursor=n-v-c:block-Cursor-blinkon0
   set guicursor+=ve:ver35-Cursor
   set guicursor+=o:hor50-Cursor
   set guicursor+=i-ci:ver25-Cursor
   set guicursor+=r-cr:hor20-Cursor
   set guicursor+=sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
-" endif
+endif
 
 " key shortcuts
 
