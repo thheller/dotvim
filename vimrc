@@ -116,7 +116,6 @@ nnoremap <leader>a :Ack
 " yank till end of line Y
 nmap Y y$
 
-nmap <leader>r :registers<CR>
 nmap <leader>p :YRShow<CR>
 
 " quickfix
@@ -131,7 +130,7 @@ vmap < <gv
 vmap > >gv
 
 nmap <F6> :NERDTree<CR>
-nmap <leader>t :NERDTree<CR>
+nmap <leader>r :NERDTree<CR>
 
 let NERDTreeQuitOnOpen=0
 let NERDTreeShowBookmarks=1
