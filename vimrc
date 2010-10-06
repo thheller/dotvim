@@ -10,6 +10,7 @@ filetype plugin indent on         " Turn on file type detection.
 
 set showcmd                       " Display incomplete commands.
 set showmode                      " Display the mode you're in.
+set showmatch
 
 " disable intro screen
 set shm=atI
@@ -24,8 +25,7 @@ set wildmode=list:longest         " Complete files like a shell.
 set ignorecase                    " Case-insensitive searching.
 set smartcase                     " But case-sensitive if expression contains a capital letter.
 
-set number                        " Show line numbers.
-set ruler                         " Show cursor position.
+set ruler
 
 set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
@@ -41,7 +41,13 @@ set nobackup                      " Don't make a backup before overwriting a fil
 set nowritebackup                 " And again.
 set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 
-" UNCOMMENT TO USE
+set encoding=utf-8
+set cursorline
+set ttyfast
+
+nnoremap <tab> %
+vnoremap <tab> %
+
 set tabstop=2                    " Global tab width.
 set shiftwidth=2                 " And again, related.
 set expandtab                    " Use spaces instead of tabs
@@ -50,16 +56,9 @@ set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
-" Tab mappings.
-" map <leader>tt :tabnew<cr>
-" map <leader>te :tabedit
-" map <leader>tc :tabclose<cr>
-" map <leader>to :tabonly<cr>
-" map <leader>tn :tabnext<cr>
-" map <leader>tp :tabprevious<cr>
-" map <leader>tf :tabfirst<cr>
-" map <leader>tl :tablast<cr>
-" map <leader>tm :tabmove
+
+set list
+set listchars=tab:▸\ ,eol:¬
 
 let mapleader = ","
 let g:mapleader = ","
@@ -71,6 +70,8 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 map <F5> :BufExplorer<CR>
+map <leader>e :BufExplorer<CR>
+
 let g:bufExplorerDefaultHelp=0
 
 " never really need to go to 0
@@ -89,23 +90,44 @@ if has("gui_running")
   set guioptions-=T
   set fuoptions=maxvert,maxhorz
 
+  " show relative numbers, might make me crazy, looks weird for sure
+  set relativenumber
 else
-  set guicursor=n-v-c:block-Cursor-blinkon0
-  set guicursor+=ve:ver35-Cursor
-  set guicursor+=o:hor50-Cursor
-  set guicursor+=i-ci:ver25-Cursor
-  set guicursor+=r-cr:hor20-Cursor
-  set guicursor+=sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
-endif
+
+  set number
+end
 
 " key shortcuts
+nnoremap ; :
+
+" make / regexps a little more magic
+nnoremap / /\v
+vnoremap / /\v
+
+" strip all trailing whitespaces
+nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+
+nnoremap <leader>a :Ack
+
+" yank till end of line Y
+nmap Y y$
+
+nmap <leader>r :registers<CR>
+nmap <leader>p :YRShow<CR>
+
+" quickfix
+nmap <leader>c :copen<CR>
+nmap <leader>cc :cclose<CR>
+
+" leave insert mode without hitting ESC
+inoremap jj <esc>
+
 
 vmap < <gv
 vmap > >gv
-vmap <Tab> >gv
-vmap <S-Tab> <gv
 
 nmap <F6> :NERDTree<CR>
+nmap <leader>t :NERDTree<CR>
 
 let NERDTreeQuitOnOpen=0
 let NERDTreeShowBookmarks=1
