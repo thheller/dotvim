@@ -11,6 +11,7 @@ filetype plugin indent on         " Turn on file type detection.
 set showcmd                       " Display incomplete commands.
 set showmode                      " Display the mode you're in.
 set showmatch
+set nomodeline
 
 " disable intro screen
 set shm=atI
@@ -80,7 +81,7 @@ map 0 ^
 
 if has("gui_running")
   set transparency=0
-  
+
   set guifont=Monaco:h12
   colorscheme vividchalk
 
@@ -92,6 +93,9 @@ if has("gui_running")
 
   " show relative numbers, might make me crazy, looks weird for sure
   set relativenumber
+
+  set undofile                " keep a persistent backup file
+  set undodir=~/.vim/tmp,~/tmp,/tmp
 else
 
   set number
@@ -107,7 +111,7 @@ vnoremap / /\v
 " strip all trailing whitespaces
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
-nnoremap <leader>a :Ack
+nnoremap <leader>a :Ack 
 
 " yank till end of line Y
 nmap Y y$
