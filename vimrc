@@ -43,8 +43,6 @@ set nowritebackup                 " And again.
 set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 
 set encoding=utf-8
-set cursorline
-set ttyfast
 
 nnoremap <tab> %
 vnoremap <tab> %
@@ -93,6 +91,8 @@ if has("gui_running")
 
   " show relative numbers, might make me crazy, looks weird for sure
   set relativenumber
+  set cursorline
+  set ttyfast
 
   set undofile                " keep a persistent backup file
   set undodir=~/.vim/tmp,~/tmp,/tmp
