@@ -13,6 +13,10 @@ set showmode                      " Display the mode you're in.
 set showmatch
 set nomodeline
 
+" remove annoying - Thanks for flying VIM
+set titlestring=
+set titleold=
+
 " disable intro screen
 set shm=atI
 
@@ -81,6 +85,9 @@ if has("gui_running")
   set transparency=0
 
   set guifont=Monaco:h12
+
+  " lets check that one out
+  set guifont=Meslo\ LG\ S:h13
   colorscheme vividchalk
 
   " my 30" setup, doesnt work so well on macbook :P
@@ -122,6 +129,9 @@ nmap <leader>p :YRShow<CR>
 nmap <leader>c :copen<CR>
 nmap <leader>cc :cclose<CR>
 
+map <leader>b :NERDTreeFromBookmark<Space>
+nnoremap <silent> <leader>f :NERDTreeFind<CR>
+
 " leave insert mode without hitting ESC
 inoremap jj <esc>
 
@@ -134,7 +144,7 @@ nmap <leader>r :NERDTree<CR>
 
 let NERDTreeQuitOnOpen=0
 let NERDTreeShowBookmarks=1
-let NERDTreeWinPos = "right"
+let NERDTreeWinPos = "left"
 let NERDTreeWinSize = 40
 
 
