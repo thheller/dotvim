@@ -13,6 +13,10 @@ set showmode                      " Display the mode you're in.
 set showmatch
 set nomodeline
 
+" autosave without my macro
+set autowrite
+
+
 " remove annoying - Thanks for flying VIM
 set titlestring=
 set titleold=
@@ -36,7 +40,7 @@ set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
 
 set wrap                          " Turn on line wrapping.
-set scrolloff=8                   " Show 3 lines of context around the cursor.
+set scrolloff=2                   " Show 3 lines of context around the cursor.
 
 set title                         " Set the terminal's title
 
