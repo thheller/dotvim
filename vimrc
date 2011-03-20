@@ -63,7 +63,6 @@ set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
-
 set list
 set listchars=tab:▸\ ,eol:¬
 
@@ -107,10 +106,17 @@ if has("gui_running")
 
   set undofile                " keep a persistent backup file
   set undodir=~/.vim/tmp,~/tmp,/tmp
+
 else
 
   set number
 end
+
+    
+noremap <Down> <Nop>
+noremap <Up> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
 
 " key shortcuts
 nnoremap ; :
@@ -151,4 +157,5 @@ let NERDTreeShowBookmarks=1
 let NERDTreeWinPos = "left"
 let NERDTreeWinSize = 40
 
-
+let g:syntastic_auto_loc_list=1
+let g:syntastic_quiet_warnings=1
