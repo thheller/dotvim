@@ -46,3 +46,9 @@
 [submodule "bundle/vim-ruby-runner"]
 	path = bundle/vim-ruby-runner
 	url = git://github.com/henrik/vim-ruby-runner.git
+[submodule "bundle/vim-indent-guides"]
+	path = bundle/vim-indent-guides
+	url = https://github.com/nathanaelkane/vim-indent-guides
+[submodule "bundle/vim-ruby"]
+	path = bundle/vim-ruby
+	url = git://github.com/vim-ruby/vim-ruby.git
