@@ -152,10 +152,14 @@ vmap > >gv
 nmap <F6> :NERDTree<CR>
 nmap <leader>r :NERDTree<CR>
 
-let NERDTreeQuitOnOpen=0
+let NERDTreeQuitOnOpen=1
 let NERDTreeShowBookmarks=1
-let NERDTreeWinPos = "left"
+let NERDTreeWinPos = "right"
 let NERDTreeWinSize = 40
+let NERDTreeMinimalUI = 1
 
 let g:syntastic_auto_loc_list=1
 let g:syntastic_quiet_warnings=1
+
+let g:rubytest_cmd_spec = "rspec -f documentation --drb %p"
+let g:rubytest_cmd_example = "rspec -f documentation --drb %p -e '%c'"
