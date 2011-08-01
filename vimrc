@@ -87,6 +87,7 @@ map 0 ^
 if has("gui_running")
   set transparency=0
 
+  set noballooneval
   set guifont=Monaco:h12
 
   " lets check that one out
@@ -108,6 +109,7 @@ if has("gui_running")
   set undodir=~/.vim/tmp,~/tmp,/tmp
 
 else
+  colorscheme ir_black
 
   set number
 end
@@ -152,7 +154,7 @@ vmap > >gv
 nmap <F6> :NERDTree<CR>
 nmap <leader>r :NERDTree<CR>
 
-let NERDTreeQuitOnOpen=1
+let NERDTreeQuitOnOpen=0
 let NERDTreeShowBookmarks=1
 let NERDTreeWinPos = "right"
 let NERDTreeWinSize = 40
@@ -163,3 +165,4 @@ let g:syntastic_quiet_warnings=1
 
 let g:rubytest_cmd_spec = "rspec -f documentation --drb %p"
 let g:rubytest_cmd_example = "rspec -f documentation --drb %p -e '%c'"
+
